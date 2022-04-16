@@ -27,7 +27,17 @@ body {
 
 /* Body-content */
 
-.content1 {
+.content{
+    height: 200vh;
+    background-color: whitesmoke;
+    background-blend-mode: multiply;
+    background-size: cover;
+    display: -ms-grid;
+    display: grid;
+    place-items: center;
+}
+
+.content1{
     height: 200vh;
     // height: 100%;
     // background-image: url("../img/bgrnd.jpg");
