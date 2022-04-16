@@ -25,14 +25,90 @@ body {
     // transition: all .4s ease-in-out;
 }
 
-.content {
+/* Body-content */
+
+.content1 {
     height: 200vh;
+    // height: 100%;
     // background-image: url("../img/bgrnd.jpg");
     background-color: whitesmoke;
     background-blend-mode: multiply;
     background-size: cover;
     display: grid;
+    grid-template-columns: repeat(2, 1fr);
     place-items: center;
+    .left-content{
+        display: flex;
+        align-items: center;
+        position: relative;  
+        .image{
+            // border-radius: 14px;
+            height: 100%;
+            width: 60%;
+            margin-left: 15rem;
+            // background-color: blue;
+            img { 
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: all .4s ease-in-out;
+                filter: grayscale(100%);
+                &:hover{
+                    filter: grayscale(0);
+                }
+            }
+        }
+    }
+    .right-content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-right: 10rem;
+        .name{
+            font-size: 3rem;
+            span{
+                color: var(--color3)
+            }
+        }
+        p {
+            margin: 1.5rem 0;
+            line-height: 2rem;
+        }
+    }
+}
+
+
+/* Independed components */
+.btn-con{
+    display: flex;
+    align-self: flex-start;
+}
+.main-btn{
+    border-radius: 30px;
+    color: inherit;
+    font-weight: 600;
+    position: relative;
+    border: 1px solid var(--color-primary);
+    display: flex;
+    align-self: flex-start;
+    align-items: center;
+    overflow: hidden;
+    .btn-text{
+        padding: 0 1rem;
+    }
+    .btn-icon{
+        background-color: var(--color-primary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        padding: 1rem;
+        i{
+            // font-size: 1rem;
+            color: white;
+            // pointer-events: none;
+        }
+    }
 }
 
 /* navigation styles start here */
@@ -179,6 +255,8 @@ nav a:hover {   /* When mouse hovered */
 //     width: 20px;
 //     display: block;
 // }
+
+
 
 
 /* Interactive for small and big screens */
