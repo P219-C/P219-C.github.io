@@ -29,10 +29,10 @@ body {
 
 .content{
     height: 200vh;
+    // background-image: url("../img/bgrnd.jpg");
     background-color: whitesmoke;
     background-blend-mode: multiply;
     background-size: cover;
-    display: -ms-grid;
     display: grid;
     place-items: center;
 }
