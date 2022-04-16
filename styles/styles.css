@@ -26,17 +26,61 @@ body {
 
 /* Body-content */
 .content {
-  height: 200vh;
-  background-color: whitesmoke;
-  background-blend-mode: multiply;
+  height: 100vh;
+  padding: 0;
+}
+
+.hero-image {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.25))), url("../img/bgrnd2.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.25)), url("../img/bgrnd2.jpg");
   background-size: cover;
-  display: -ms-grid;
-  display: grid;
-  place-items: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.hero-image .hero-text {
+  color: white;
+  text-align: center;
+}
+
+.hero-image .hero-text h1 {
+  font-size: 70px;
+  font-weight: 250;
+}
+
+.hero-image .hero-text p {
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 50px;
+}
+
+.hero-image .hero-text .hero-btn {
+  text-decoration: none;
+  color: white;
+  background-color: var(--color-primary);
+  padding: 10px 30px;
+  border-radius: 10px;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+.hero-image .hero-text .hero-btn:hover {
+  color: black;
+  background-color: white;
 }
 
 .split-content {
-  height: 200vh;
+  height: 100vh;
   background-color: whitesmoke;
   background-blend-mode: multiply;
   background-size: cover;

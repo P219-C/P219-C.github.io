@@ -28,17 +28,64 @@ body {
 /* Body-content */
 
 .content{
-    height: 200vh;
+    height: 100vh ;
+    padding: 0;
     // background-image: url("../img/bgrnd.jpg");
-    background-color: whitesmoke;
-    background-blend-mode: multiply;
-    background-size: cover;
-    display: grid;
-    place-items: center;
+    // background-color: whitesmoke;
+    // background-blend-mode: multiply;
+    // background-size: cover;
+    // display: grid;
 }
 
+.hero-image{
+    background-image: linear-gradient(
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.25)),
+        url("../img/bgrnd2.jpg");
+    // background-image: url("../img/bgrnd2.jpg");
+    // background-color: whitesmoke;
+    // background-blend-mode: multiply;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .hero-text{
+        color: white;
+        text-align: center;
+        h1{
+            font-size: 70px;
+            font-weight: 250;
+        }
+        p{
+            font-size: 30px;
+            font-weight: 500;
+            line-height: 50px;
+        }
+        .hero-btn{
+            text-decoration: none;
+            color: white;
+            background-color: var(--color-primary);
+            padding: 10px 30px;
+            border-radius: 10px;
+            margin-top: 10px;
+            display: inline-block;
+            &:hover{
+                color: black;
+                background-color: white;
+            }
+        }
+    }
+}
+
+
+
+
+
 .split-content{
-    height: 200vh;
+    height: 100vh;
     // height: 100%;
     // background-image: url("../img/bgrnd.jpg");
     background-color: whitesmoke;
