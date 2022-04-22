@@ -430,7 +430,28 @@ nav a:hover {   /* When mouse hovered */
 //     display: block;
 // }
 
+// Projects
+.proj-text{
+    padding: 2rem 0;
+    text-align: center;
+}
 
+.projects{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+    margin-top: 3rem;
+    .project-item{
+        position: relative;
+        img{
+            width: 100%;
+            height: 300px;
+            object-fit: contain;
+            border-radius: 15px;
+        }
+        // .hover-item
+    }
+}
 
 
 /* Interactive for small and big screens */
