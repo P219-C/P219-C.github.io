@@ -268,11 +268,60 @@ body {
   width: 60%;
 }
 
-.stat-title {
+.section-title {
   text-transform: uppercase;
   font-size: 1.4rem;
   text-align: center;
   padding: 3.5rem 0;
+}
+
+.timeline {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
+  padding-bottom: 3rem;
+  padding-left: 15rem;
+}
+
+.timeline .timeline-item {
+  position: relative;
+  padding-left: 3rem;
+  border-left: 1px solid var(--color-primary);
+}
+
+.timeline .timeline-item .tl-icon {
+  position: absolute;
+  left: -27px;
+}
+
+.timeline .timeline-item .tl-duration {
+  padding: .2rem .6rem;
+  background-color: lightblue;
+  border-radius: 15px;
+  display: inline-block;
+  font-size: .8rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: black;
+}
+
+.timeline .timeline-item h5 {
+  padding: 1rem 0;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.timeline .timeline-item h5 span {
+  color: blue;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+.timeline .timeline-item p {
+  color: red;
 }
 
 /* navigation styles start here */

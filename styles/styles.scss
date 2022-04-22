@@ -220,13 +220,70 @@ body {
     }
 }
 
-.stat-title{
+.section-title{
     text-transform: uppercase;
     font-size: 1.4rem;
     text-align: center;
     padding: 3.5rem 0;
     // position: relative;
 }
+
+
+// Timeline
+.timeline{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+    padding-bottom: 3rem;
+    padding-left: 15rem;
+    .timeline-item{
+        position: relative;
+        padding-left: 3rem;
+        border-left: 1px solid var(--color-primary);
+        .tl-icon{
+            position: absolute;
+            left: -27px;
+            // UNCOMMENT THE FOLLOWING SECTION TO ADD A CIRCLE UNDER THE ICON -------
+            // top: 0;
+            // background-color: red;
+            // width: 50px;
+            // height: 50px;
+            // border-radius: 50%;
+            // display: flex;
+            // align-items: center;
+            // justify-content: center;
+            // i{
+            //     font-size: 1.3rem;
+            // }
+            // ------------------------------
+        }
+        .tl-duration{
+            padding: .2rem .6rem;
+            background-color: lightblue;
+            border-radius: 15px;
+            display: inline-block;
+            font-size: .8rem;
+            text-transform: uppercase;
+            font-weight: 500;
+            color: black;
+        }
+        h5{
+            padding: 1rem 0;
+            text-transform: uppercase;
+            font-size: 1.3rem;
+            font-weight: 600;
+            span{
+                color: blue;
+                font-weight: 500;
+                font-size: 1.2rem;
+            }
+        }
+        p{
+            color: red;
+        }
+    }
+}
+
 
 /* navigation styles start here */
 
