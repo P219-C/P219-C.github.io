@@ -168,6 +168,66 @@ body {
     }
 }
 
+.about-stats{
+    padding-bottom: 4rem;
+    height: 100vh;
+    background-color: whitesmoke;
+    background-blend-mode: multiply;
+    background-size: cover;
+    padding-left: 15rem;
+    padding-right: 12rem;
+    // display: grid;
+    // grid-template-columns: repeat(2, 1fr);
+    // place-items: center;
+    .progress-bars{ /*Two column grids*/
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 2rem;
+        .progress-bar{
+            display: flex;
+            flex-direction: column;
+            .prog-title{
+                text-transform: uppercase;
+                font-weight: 500;
+            }
+            .progress-con{
+                display: flex;
+                align-items: center;
+                .prog-text{
+                    color: black;
+                }
+                .progress{
+                    width: 100%;
+                    height: .45rem;
+                    background-color: black;
+                    margin-left: 1rem;
+                    position: relative;
+                    span{
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        height: 100%;
+                        background-color: red;
+                        transition: all .4s ease-in-out;
+                        // width: 90%;
+                    }
+                    .html{
+                        width: 60%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.stat-title{
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    text-align: center;
+    padding: 3.5rem 0;
+    // position: relative;
+}
+
 /* navigation styles start here */
 
 header {
