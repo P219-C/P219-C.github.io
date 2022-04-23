@@ -446,13 +446,13 @@ nav a:hover {   /* When mouse hovered */
         border-radius: 15px;
         img{
             width: 100%;
-            height: 300px;
+            height: 300px;          // img height should be the same as .hover-items height
             object-fit: cover;
             border-radius: 15px;
         }
         .hover-items{
             width: 100%;
-            height: 100%;
+            height: 300px;          // .hover-items height should be the same as img height
             background-color: red;
             position: absolute;
             left: 0;
@@ -463,7 +463,7 @@ nav a:hover {   /* When mouse hovered */
             align-items: center;
             flex-direction: column;
             opacity: 0;
-            transform: scale(0);
+            transform: scale(1);
             transition: all .4s ease-in-out;
             h3{
                 font-size: 1.5rem;
@@ -503,8 +503,8 @@ nav a:hover {   /* When mouse hovered */
 }
 
 .project-item:hover .hover-items{
-    opacity: 1;
-    transform: scale(1);
+    opacity: .75;
+    // transform: scale(1);
 }
 
 
