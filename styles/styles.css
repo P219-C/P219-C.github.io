@@ -79,9 +79,13 @@ body {
   background-color: white;
 }
 
+.section-content {
+  margin-left: 15rem;
+  margin-right: 15rem;
+}
+
 .split-content {
   height: 100vh;
-  background-color: whitesmoke;
   background-blend-mode: multiply;
   background-size: cover;
   display: -ms-grid;
@@ -103,8 +107,7 @@ body {
 
 .split-content .left-content .image {
   height: 100%;
-  width: 60%;
-  margin-left: 15rem;
+  width: 70%;
 }
 
 .split-content .left-content .image img {
@@ -134,7 +137,6 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding-right: 10rem;
 }
 
 .split-content .right-content .name {
@@ -202,11 +204,8 @@ body {
 .about-stats {
   padding-bottom: 4rem;
   height: 100vh;
-  background-color: whitesmoke;
   background-blend-mode: multiply;
   background-size: cover;
-  padding-left: 15rem;
-  padding-right: 12rem;
 }
 
 .about-stats .progress-bars {
@@ -282,7 +281,7 @@ body {
       grid-template-columns: repeat(2, 1fr);
   grid-gap: 2rem;
   padding-bottom: 3rem;
-  padding-left: 15rem;
+  padding-left: 27px;
 }
 
 .timeline .timeline-item {
