@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Work+Sans:300,600');
 
+
 :root {
     --color1: rgba(0, 0, 0, 0.6);
     --color2: rgb(255, 255, 255, .6);
@@ -82,8 +83,8 @@ body {
 
 
 .section-content{
-    margin-left: 15rem;
-    margin-right: 15rem;
+    margin-left: 10rem;
+    margin-right: 10rem;
 }
 
 
@@ -104,7 +105,7 @@ body {
         .image{
             // border-radius: 14px;
             height: 100%;
-            width: 70%;
+            width: 100%;
             // margin-left: 15rem;
             // background-color: blue;
             img { 
@@ -605,73 +606,75 @@ nav a:hover {   /* When mouse hovered */
     }
 }
 
-/* Interactive for small and big screens */
-@media screen and (min-width: 800px) {
+@import './media';
 
-    .nav-toggle-label {
-        display: none;
-    }
+// /* Interactive for small and big screens */
+// @media screen and (min-width: 800px) {
 
-    header {
-        display: grid;
-        grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
-    }
+//     .nav-toggle-label {
+//         display: none;
+//     }
 
-    .logo {
-        grid-column: 2 / span 1; /* '2 / 3' gets the same result*/
-    }
+//     header {
+//         display: grid;
+//         grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+//     }
 
-    nav {
-        /* all: unset; */ /* Return to default all the previous adjustments */
-        /* all: unset; this causes issues with Edge, since it's unsupported */
+//     .logo {
+//         grid-column: 2 / span 1; /* '2 / 3' gets the same result*/
+//     }
 
-        /* the following lines are not from my video, but add Edge support */
-        position: relative;
-        text-align: left;
-        transition: none;
-        transform: scale(1,1);
-        background: none;
-        top: initial;
-        left: initial;
-        /* end Edge support stuff */
+//     nav {
+//         /* all: unset; */ /* Return to default all the previous adjustments */
+//         /* all: unset; this causes issues with Edge, since it's unsupported */
 
-        grid-column: 3/4;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-    }
+//         /* the following lines are not from my video, but add Edge support */
+//         position: relative;
+//         text-align: left;
+//         transition: none;
+//         transform: scale(1,1);
+//         background: none;
+//         top: initial;
+//         left: initial;
+//         /* end Edge support stuff */
 
-    nav ul {
-        display: flex;
-        /* justify-content: flex-end; */
-        /* border: 1px solid red; */
-    }
+//         grid-column: 3/4;
+//         display: flex;
+//         justify-content: flex-end;
+//         align-items: center;
+//     }
 
-    nav li {
-        margin-left: 3em;
-        margin-bottom: 0;
-    }
+//     nav ul {
+//         display: flex;
+//         /* justify-content: flex-end; */
+//         /* border: 1px solid red; */
+//     }
 
-    nav a {
-        opacity: 1;
-        position: relative;
-    }
+//     nav li {
+//         margin-left: 3em;
+//         margin-bottom: 0;
+//     }
 
-    nav a::before {
-        content: '';
-        display: block;
-        height: 5px; 
-        background: black;
-        position: absolute;
-        bottom: -0.25em;
-        left: 0;
-        right: 0;
-        transform: scale(0, 1);
-        transform-origin: left;
-        transition: transform ease-in-out 250ms;
-    }
+//     nav a {
+//         opacity: 1;
+//         position: relative;
+//     }
 
-    nav a:hover::before {
-        transform: scale(1,1);
-    }
-}
+//     nav a::before {
+//         content: '';
+//         display: block;
+//         height: 5px; 
+//         background: black;
+//         position: absolute;
+//         bottom: -0.25em;
+//         left: 0;
+//         right: 0;
+//         transform: scale(0, 1);
+//         transform-origin: left;
+//         transition: transform ease-in-out 250ms;
+//     }
+
+//     nav a:hover::before {
+//         transform: scale(1,1);
+//     }
+// }

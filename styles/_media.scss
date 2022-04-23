@@ -1,0 +1,134 @@
+/* Interactive for small and big screens */
+@media screen and (min-width: 800px) {
+
+    .nav-toggle-label {
+        display: none;
+    }
+
+    header {
+        display: grid;
+        grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+    }
+
+    .logo {
+        grid-column: 2 / span 1; /* '2 / 3' gets the same result*/
+    }
+
+    nav {
+        /* all: unset; */ /* Return to default all the previous adjustments */
+        /* all: unset; this causes issues with Edge, since it's unsupported */
+
+        /* the following lines are not from my video, but add Edge support */
+        position: relative;
+        text-align: left;
+        transition: none;
+        transform: scale(1,1);
+        background: none;
+        top: initial;
+        left: initial;
+        /* end Edge support stuff */
+
+        grid-column: 3/4;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    nav ul {
+        display: flex;
+        /* justify-content: flex-end; */
+        /* border: 1px solid red; */
+    }
+
+    nav li {
+        margin-left: 3em;
+        margin-bottom: 0;
+    }
+
+    nav a {
+        opacity: 1;
+        position: relative;
+    }
+
+    nav a::before {
+        content: '';
+        display: block;
+        height: 5px; 
+        background: black;
+        position: absolute;
+        bottom: -0.25em;
+        left: 0;
+        right: 0;
+        transform: scale(0, 1);
+        transform-origin: left;
+        transition: transform ease-in-out 250ms;
+    }
+
+    nav a:hover::before {
+        transform: scale(1,1);
+    }
+}
+
+@media screen and (max-width: 800px){
+
+    .section-content{
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .control{
+        display: none;
+    }
+
+    .split-content{
+        grid-template-columns: 1fr;
+        .left-content{
+            .image{
+                padding-top: 2rem;
+            }
+        }
+    }
+
+    .timeline{
+        grid-template-columns: 1fr;
+        // padding-bottom: 0;
+    }
+
+    // .about-stats{
+    //     .progress-bars{
+    //         grid-template-columns: 1fr;
+    //     }
+    // }
+
+    .projects{
+        grid-template-columns: 1fr;
+        .project-item{
+            .hover-items{
+                height: 125px; // Check the relationship between this and position top
+                opacity: .80;
+                position: absolute;
+                left: 0;
+                top: 175px;
+                h3{
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+    }
+
+    .contact-content-con{
+        flex-direction: column;
+        .right-contact{
+            margin-left: 1rem;
+            .name-email{
+                flex-direction: column;
+            }
+        }
+    }
+
+    .contact-content-con .right-contact .name-email :last-child{
+        margin-left: 0;
+        margin-top: 1.5rem;
+    }
+
+}
