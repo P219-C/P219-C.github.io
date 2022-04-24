@@ -80,19 +80,22 @@ body {
 }
 
 .section-content {
-  margin-left: 10rem;
-  margin-right: 10rem;
+  margin-left: 12vw;
+  margin-right: 12vw;
 }
 
 .split-content {
-  height: 100vh;
+  min-height: 100vh;
   background-blend-mode: multiply;
   background-size: cover;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[2];
       grid-template-columns: repeat(2, 1fr);
+  -webkit-column-gap: 3vw;
+          column-gap: 3vw;
   place-items: center;
+  padding-top: 38px;
 }
 
 .split-content .left-content {
@@ -141,6 +144,7 @@ body {
 
 .split-content .right-content .name {
   font-size: 3rem;
+  margin: 1rem 0;
 }
 
 .split-content .right-content .name span {
@@ -148,7 +152,7 @@ body {
 }
 
 .split-content .right-content p {
-  margin: 1.5rem 0;
+  margin: 0.5rem 0;
   line-height: 2rem;
 }
 
@@ -159,6 +163,8 @@ body {
   display: flex;
   -ms-flex-item-align: start;
       align-self: flex-start;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .main-btn {
@@ -850,6 +856,9 @@ nav a:hover {
   }
   .split-content .left-content .image {
     padding-top: 2rem;
+  }
+  .split-content .right-content .name {
+    margin: 0;
   }
   .timeline {
     -ms-grid-columns: 1fr;
