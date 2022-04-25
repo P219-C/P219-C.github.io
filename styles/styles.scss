@@ -2,12 +2,17 @@
 
 // DEFAULT VARIABLES
 :root {
+    --nav_color: rgba(0, 0, 0, 0.8);
+    --color-primary: black;
+    --color-secondary: whitesmoke;
+    --color-tertiary: brown;
+    --color-aux1: white;
+    --color-aux2: #245473;
+    --color-aux3: #5E7332;
+    --color-aux4: #8AABBF;
     --color1: rgba(0, 0, 0, 0.6);
     --color2: rgb(255, 255, 255, .6);
     --color3: rgb(255, 0, 0, 1);
-    --nav_color: rgba(0, 0, 0, 0.8);
-    --color-primary: rgba(25,29,43,1);
-    --color-secondary: red;
 }
 
 *, *::before, *::after {
@@ -19,7 +24,7 @@
 
 body {
     margin:0;
-    background-color: var(--color2);
+    background-color: var(--color-secondary);
     font-family: 'Work Sans', sans-serif;
     font-weight: 400;
     color: var(--color-primary);
@@ -139,62 +144,76 @@ nav a:hover {   /* When mouse hovered */
     transition: opacity 250ms ease-in-out 250ms; /* Opacity transition of 250ms with a delay of 250ms (second 250ms)*/
 }
 
+.logo{
+    color: white;
+    font-size: 1.5rem;
+    padding-top: .3rem;
+    padding-bottom: .3rem;
+    // img{
+    //     width: 35px;
+    // }
+}
+
 /* navigation styles end here -------------------------------------- */
 
 /* Body-content */
 
-.content{
-    height: 100vh ;
-    padding: 0;
-    // background-image: url("../img/bgrnd.jpg");
-    // background-color: whitesmoke;
-    // background-blend-mode: multiply;
-    // background-size: cover;
-    // display: grid;
+.control-right{
+    position: fixed;
+    z-index: 1000;
+    top: 95%;
+    right: 1%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-50%);
+    padding: 1rem;
+    cursor: pointer;
+    background-color: var(--nav_color);
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    box-shadow: var(--color-primary);
+    i{
+        font-size: 2rem;
+        color: var(--color-aux1);
+        pointer-events: none;
+    }
+    // img{
+    //     width: 30px;
+    // }
 }
 
-.hero-image{
-    background-image: linear-gradient(
-        rgba(0,0,0,0.5),
-        rgba(0,0,0,0.25)),
-        url("../img/bgrnd2.jpg");
-    // background-image: url("../img/bgrnd2.jpg");
-    // background-color: whitesmoke;
-    // background-blend-mode: multiply;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 80%;
+.control-left{
+    position: fixed;
+    z-index: 1000;
+    top: 88%;
+    right: 1%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    .hero-text{
-        color: white;
-        text-align: center;
-        h1{
-            font-size: 70px;
-            font-weight: 250;
-        }
-        p{
-            font-size: 30px;
-            font-weight: 500;
-            line-height: 50px;
-        }
-        .hero-btn{
-            text-decoration: none;
-            color: white;
-            background-color: var(--color-primary);
-            padding: 10px 30px;
-            border-radius: 10px;
-            margin-top: 10px;
-            display: inline-block;
-            &:hover{
-                color: black;
-                background-color: white;
-            }
-        }
+    justify-content: center;
+    transform: translateY(-50%);
+    padding: 1rem;
+    cursor: pointer;
+    background-color: var(--nav_color);
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    box-shadow: var(--color-primary);
+    i{
+        font-size: 2rem;
+        color: var(--color-aux1);
+        pointer-events: none;
     }
+    // img{
+    //     width: 30px;
+    // }
 }
+
 
 
 .section-content{
@@ -245,7 +264,7 @@ nav a:hover {   /* When mouse hovered */
             font-size: 3rem;
             margin: 1rem 0;
             span{
-                color: var(--color3)
+                color: var(--color-tertiary);
             }
         }
         p {
@@ -256,7 +275,7 @@ nav a:hover {   /* When mouse hovered */
 }
 
 
-/* Independed components */
+/* Independed components - DOWNLOAD CV BUTTON*/
 .btn-con{
     display: flex;
     align-self: flex-start;
@@ -285,15 +304,78 @@ nav a:hover {   /* When mouse hovered */
         padding: 1rem;
         i{
             // font-size: 1rem;
-            color: white;
+            color: var(--color-aux1);
             // pointer-events: none;
+        }
+    }
+}
+
+.section-title{
+    text-transform: uppercase;
+    font-size: 2rem;
+    text-align: center;
+    padding: 3.5rem 0;
+    // position: relative;
+}
+
+// Timeline
+.timeline{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+    padding-bottom: 3rem;
+    padding-left: 27px;
+    .timeline-item{
+        position: relative;
+        padding-left: 3rem;
+        border-left: 1px solid var(--color-primary);
+        .tl-icon{
+            position: absolute;
+            left: -27px;
+            // UNCOMMENT THE FOLLOWING SECTION TO ADD A CIRCLE UNDER THE ICON -------
+            // top: 0;
+            // background-color: red;
+            // width: 50px;
+            // height: 50px;
+            // border-radius: 50%;
+            // display: flex;
+            // align-items: center;
+            // justify-content: center;
+            // i{
+            //     font-size: 1.3rem;
+            // }
+            // ------------------------------
+        }
+        .tl-duration{
+            padding: .2rem .6rem;
+            background-color: var(--color-aux4);
+            border-radius: 15px;
+            display: inline-block;
+            font-size: .8rem;
+            text-transform: uppercase;
+            font-weight: 500;
+            color: var(--color-primary);
+        }
+        h5{
+            padding: 1rem 0;
+            text-transform: uppercase;
+            font-size: 1.3rem;
+            font-weight: 600;
+            span{
+                color: var(--color-tertiary);
+                font-weight: 500;
+                font-size: 1.2rem;
+            }
+        }
+        p{
+            color: var(--color-primary);
         }
     }
 }
 
 .about-stats{
     padding-bottom: 4rem;
-    height: 100vh;
+    min-height: 100vh;
     // background-color: var(--color2);
     background-blend-mode: multiply;
     background-size: cover;
@@ -341,96 +423,12 @@ nav a:hover {   /* When mouse hovered */
     }
 }
 
-.section-title{
-    text-transform: uppercase;
-    font-size: 1.4rem;
-    text-align: center;
-    padding: 3.5rem 0;
-    // position: relative;
-}
-
-
-// Timeline
-.timeline{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 2rem;
-    padding-bottom: 3rem;
-    padding-left: 27px;
-    .timeline-item{
-        position: relative;
-        padding-left: 3rem;
-        border-left: 1px solid var(--color-primary);
-        .tl-icon{
-            position: absolute;
-            left: -27px;
-            // UNCOMMENT THE FOLLOWING SECTION TO ADD A CIRCLE UNDER THE ICON -------
-            // top: 0;
-            // background-color: red;
-            // width: 50px;
-            // height: 50px;
-            // border-radius: 50%;
-            // display: flex;
-            // align-items: center;
-            // justify-content: center;
-            // i{
-            //     font-size: 1.3rem;
-            // }
-            // ------------------------------
-        }
-        .tl-duration{
-            padding: .2rem .6rem;
-            background-color: lightblue;
-            border-radius: 15px;
-            display: inline-block;
-            font-size: .8rem;
-            text-transform: uppercase;
-            font-weight: 500;
-            color: black;
-        }
-        h5{
-            padding: 1rem 0;
-            text-transform: uppercase;
-            font-size: 1.3rem;
-            font-weight: 600;
-            span{
-                color: blue;
-                font-weight: 500;
-                font-size: 1.2rem;
-            }
-        }
-        p{
-            color: red;
-        }
-    }
-}
 
 
 
-.control{
-    position: fixed;
-    z-index: 1000;
-    top: 95%;
-    right: 1%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transform: translateY(-50%);
-    padding: 1rem;
-    cursor: pointer;
-    background-color: var(--nav_color);
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    display: flex;
-    box-shadow: var(--color-primary);
-    i{
-        font-size: 1.5rem;
-        color: white;
-        pointer-events: none;
-    }
-}
+
+
+
 
 // .icon{
 //     background: url("../img/Logo.png");
@@ -614,75 +612,61 @@ nav a:hover {   /* When mouse hovered */
     }
 }
 
+.content{
+    height: 100vh ;
+    padding: 0;
+    // background-image: url("../img/bgrnd.jpg");
+    // background-color: whitesmoke;
+    // background-blend-mode: multiply;
+    // background-size: cover;
+    // display: grid;
+}
+
+// CONTACT SECTION begins ----------------------------------
+
+.hero-image{
+    background-image: linear-gradient(
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.25)),
+        url("../img/bgrnd2.jpg");
+    // background-image: url("../img/bgrnd2.jpg");
+    // background-color: whitesmoke;
+    // background-blend-mode: multiply;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .hero-text{
+        color: white;
+        text-align: center;
+        h1{
+            font-size: 70px;
+            font-weight: 250;
+        }
+        p{
+            font-size: 30px;
+            font-weight: 500;
+            line-height: 50px;
+        }
+        .hero-btn{
+            text-decoration: none;
+            color: white;
+            background-color: var(--color-primary);
+            padding: 10px 30px;
+            border-radius: 10px;
+            margin-top: 10px;
+            display: inline-block;
+            &:hover{
+                color: black;
+                background-color: white;
+            }
+        }
+    }
+}
+
+// CONTACT SECTION ends ----------------------------------
+
 @import './media';
-
-// /* Interactive for small and big screens */
-// @media screen and (min-width: 800px) {
-
-//     .nav-toggle-label {
-//         display: none;
-//     }
-
-//     header {
-//         display: grid;
-//         grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
-//     }
-
-//     .logo {
-//         grid-column: 2 / span 1; /* '2 / 3' gets the same result*/
-//     }
-
-//     nav {
-//         /* all: unset; */ /* Return to default all the previous adjustments */
-//         /* all: unset; this causes issues with Edge, since it's unsupported */
-
-//         /* the following lines are not from my video, but add Edge support */
-//         position: relative;
-//         text-align: left;
-//         transition: none;
-//         transform: scale(1,1);
-//         background: none;
-//         top: initial;
-//         left: initial;
-//         /* end Edge support stuff */
-
-//         grid-column: 3/4;
-//         display: flex;
-//         justify-content: flex-end;
-//         align-items: center;
-//     }
-
-//     nav ul {
-//         display: flex;
-//         /* justify-content: flex-end; */
-//         /* border: 1px solid red; */
-//     }
-
-//     nav li {
-//         margin-left: 3em;
-//         margin-bottom: 0;
-//     }
-
-//     nav a {
-//         opacity: 1;
-//         position: relative;
-//     }
-
-//     nav a::before {
-//         content: '';
-//         display: block;
-//         height: 5px; 
-//         background: black;
-//         position: absolute;
-//         bottom: -0.25em;
-//         left: 0;
-//         right: 0;
-//         transform: scale(0, 1);
-//         transform-origin: left;
-//         transition: transform ease-in-out 250ms;
-//     }
-
-//     nav a:hover::before {
-//         transform: scale(1,1);
-//     }
-// }
