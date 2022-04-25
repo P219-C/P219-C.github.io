@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Work+Sans:300,600');
 
-
+// DEFAULT VARIABLES
 :root {
     --color1: rgba(0, 0, 0, 0.6);
     --color2: rgb(255, 255, 255, .6);
@@ -25,6 +25,121 @@ body {
     color: var(--color-primary);
     // transition: all .4s ease-in-out;
 }
+
+/* navigation styles start here -------------------------------------- */
+
+header {
+    background: var(--nav_color); /* variable defined in line 2 */
+    text-align: center;
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+}
+
+/* changed this from the tutorial video to
+   allow it to gain focus, making it tabbable */
+.nav-toggle {
+    display: none;
+    position: absolute !important;
+    top: -9999px !important;
+    left: -9999px !important;
+}
+
+.nav-toggle:focus ~ .nav-toggle-label {
+    outline: 3px solid rgba(lightblue, .75);
+}
+
+.nav-toggle-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 1em;
+    /* border: 1px solid red; */
+    /* --- */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    /* --- */
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after { /* this is the middle line of the hamburguer */
+    display: block;
+    background: white;
+    height: 2px;
+    width: 2em;
+    border-radius: 2px;
+    position: relative;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    content: '';
+    position: absolute;
+}
+
+.nav-toggle-label span::before { /* this is the top line of the hamburguer */
+    bottom: 7px;
+}
+
+.nav-toggle-label span::after { /* this is the top line of the hamburguer */
+    top: 7px;
+}
+
+nav {
+    position: absolute;
+    text-align: left;
+    top: 100%;
+    left: 0;
+    background: var(--nav_color);
+    width: 100%;
+
+    /* display: none; */
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: transform 400ms ease-in-out;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    margin-bottom: 1em; /* em is a relative unit (Relative to the font-size of the element. 1em = 1 time the size of the current font) */
+    margin-left: 1em;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem; /* Relative to font-size of the root element */
+    text-transform: uppercase;
+    opacity: 0;
+
+    /* transition when menu is closed */
+    transition: opacity 150ms ease-in-out; 
+}
+
+nav a:hover {   /* When mouse hovered */
+    color: #000;
+}
+
+.nav-toggle:checked ~ nav { /* ~ looks for any preceeding sibling (not necessary immediately after) */
+    /* display: block; */
+    transform: scale(1,1)
+}
+
+.nav-toggle:checked ~ nav a {
+    opacity: 1;
+
+    /* transition when menu is opened */
+    transition: opacity 250ms ease-in-out 250ms; /* Opacity transition of 250ms with a delay of 250ms (second 250ms)*/
+}
+
+/* navigation styles end here -------------------------------------- */
 
 /* Body-content */
 
@@ -291,118 +406,6 @@ body {
 }
 
 
-/* navigation styles start here */
-
-header {
-    background: var(--nav_color); /* variable defined in line 2 */
-    text-align: center;
-    position: fixed;
-    z-index: 999;
-    width: 100%;
-}
-
-/* changed this from the tutorial video to
-   allow it to gain focus, making it tabbable */
-.nav-toggle {
-    display: none;
-    position: absolute !important;
-    top: -9999px !important;
-    left: -9999px !important;
-}
-
-.nav-toggle:focus ~ .nav-toggle-label {
-    outline: 3px solid rgba(lightblue, .75);
-}
-
-.nav-toggle-label {
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin-left: 1em;
-    /* border: 1px solid red; */
-    /* --- */
-    height: 100%;
-    display: flex;
-    align-items: center;
-    /* --- */
-}
-
-.nav-toggle-label span,
-.nav-toggle-label span::before,
-.nav-toggle-label span::after { /* this is the middle line of the hamburguer */
-    display: block;
-    background: white;
-    height: 2px;
-    width: 2em;
-    border-radius: 2px;
-    position: relative;
-}
-
-.nav-toggle-label span::before,
-.nav-toggle-label span::after {
-    content: '';
-    position: absolute;
-}
-
-.nav-toggle-label span::before { /* this is the top line of the hamburguer */
-    bottom: 7px;
-}
-
-.nav-toggle-label span::after { /* this is the top line of the hamburguer */
-    top: 7px;
-}
-
-nav {
-    position: absolute;
-    text-align: left;
-    top: 100%;
-    left: 0;
-    background: var(--nav_color);
-    width: 100%;
-
-    /* display: none; */
-    transform: scale(1, 0);
-    transform-origin: top;
-    transition: transform 400ms ease-in-out;
-}
-
-nav ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-nav li {
-    margin-bottom: 1em; /* em is a relative unit (Relative to the font-size of the element. 1em = 1 time the size of the current font) */
-    margin-left: 1em;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.2rem; /* Relative to font-size of the root element */
-    text-transform: uppercase;
-    opacity: 0;
-
-    /* transition when menu is closed */
-    transition: opacity 150ms ease-in-out; 
-}
-
-nav a:hover {   /* When mouse hovered */
-    color: #000;
-}
-
-.nav-toggle:checked ~ nav { /* ~ looks for any preceeding sibling (not necessary immediately after) */
-    /* display: block; */
-    transform: scale(1,1)
-}
-
-.nav-toggle:checked ~ nav a {
-    opacity: 1;
-
-    /* transition when menu is opened */
-    transition: opacity 250ms ease-in-out 250ms; /* Opacity transition of 250ms with a delay of 250ms (second 250ms)*/
-}
 
 .control{
     position: fixed;
