@@ -551,6 +551,7 @@ nav a:hover {
   font-size: 1.5rem;
   color: black;
   margin-bottom: 1.5rem;
+  text-align: center;
 }
 
 .projects .project-item .hover-items .icons {
