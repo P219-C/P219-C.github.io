@@ -208,7 +208,7 @@ nav a:hover {
 .control-left {
   position: fixed;
   z-index: 1000;
-  top: 88%;
+  top: 95%;
   right: 1%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -467,13 +467,13 @@ nav a:hover {
 }
 
 .about-stats .progress-bars .progress-bar .progress-con .prog-text {
-  color: black;
+  color: var(--color-primary);
 }
 
 .about-stats .progress-bars .progress-bar .progress-con .progress {
   width: 100%;
   height: .45rem;
-  background-color: black;
+  background-color: var(--color-primary);
   margin-left: 1rem;
   position: relative;
 }
@@ -483,7 +483,7 @@ nav a:hover {
   top: 0;
   left: 0;
   height: 100%;
-  background-color: red;
+  background-color: var(--color-tertiary);
   -webkit-transition: all .4s ease-in-out;
   transition: all .4s ease-in-out;
 }
@@ -522,7 +522,7 @@ nav a:hover {
 .projects .project-item .hover-items {
   width: 100%;
   height: 300px;
-  background-color: red;
+  background-color: var(--color-aux3);
   position: absolute;
   left: 0;
   top: 0;
@@ -567,7 +567,7 @@ nav a:hover {
 }
 
 .projects .project-item .hover-items .icons .icon {
-  background-color: white;
+  background-color: var(--color-primary);
   border-radius: 50%;
   width: 50px;
   height: 50px;
@@ -584,24 +584,88 @@ nav a:hover {
   cursor: pointer;
   -webkit-transition: all .4s ease-in-out;
   transition: all .4s ease-in-out;
+  text-decoration: none;
 }
 
 .projects .project-item .hover-items .icons .icon i {
   font-size: 1.5rem;
-  color: green;
+  color: var(--color-aux1);
   margin: 0 1rem;
 }
 
 .projects .project-item .hover-items .icons .icon:hover {
-  background-color: blue;
+  background-color: var(--color-aux1);
 }
 
 .projects .project-item .hover-items .icons .icon:hover i {
-  color: black;
+  color: var(--color-primary);
 }
 
 .project-item:hover .hover-items {
-  opacity: .75;
+  opacity: .9;
+}
+
+.split-content-project {
+  min-height: 100vh;
+  background-blend-mode: multiply;
+  background-size: cover;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  -webkit-column-gap: 3vw;
+          column-gap: 3vw;
+  place-items: center;
+}
+
+.split-content-project .left-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.split-content-project .left-content .image {
+  height: 100%;
+  width: 100%;
+}
+
+.split-content-project .left-content .image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.split-content-project .right-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-right: 5vw;
+}
+
+.split-content-project .right-content .name {
+  font-size: 3rem;
+  margin: 1rem 0;
+}
+
+.split-content-project .right-content .name span {
+  color: var(--color-tertiary);
+}
+
+.split-content-project .right-content p {
+  margin: 0.5rem 0;
+  line-height: 2rem;
 }
 
 .contact-content-con {
@@ -898,6 +962,12 @@ nav a:hover {
     margin-left: 1rem;
     margin-right: 1rem;
   }
+  .section-title {
+    text-transform: uppercase;
+    font-size: 2rem;
+    text-align: center;
+    padding: 2rem 0;
+  }
   .control-right {
     display: none;
   }
@@ -931,6 +1001,22 @@ nav a:hover {
   }
   .projects .project-item .hover-items h3 {
     margin-bottom: 1rem;
+  }
+  .split-content-project {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .split-content-project .left-content .image img {
+    min-width: 100%;
+    min-height: 100%;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  .split-content-project .right-content {
+    margin-right: 0;
+  }
+  .split-content-project .right-content .name {
+    margin: 0;
   }
   .contact-content-con {
     -webkit-box-orient: vertical;

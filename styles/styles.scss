@@ -189,7 +189,7 @@ nav a:hover {   /* When mouse hovered */
 .control-left{
     position: fixed;
     z-index: 1000;
-    top: 88%;
+    top: 95%;
     right: 1%;
     display: flex;
     flex-direction: column;
@@ -397,12 +397,12 @@ nav a:hover {   /* When mouse hovered */
                 display: flex;
                 align-items: center;
                 .prog-text{
-                    color: black;
+                    color: var(--color-primary);
                 }
                 .progress{
                     width: 100%;
                     height: .45rem;
-                    background-color: black;
+                    background-color: var(--color-primary);
                     margin-left: 1rem;
                     position: relative;
                     span{
@@ -410,7 +410,7 @@ nav a:hover {   /* When mouse hovered */
                         top: 0;
                         left: 0;
                         height: 100%;
-                        background-color: red;
+                        background-color: var(--color-tertiary);
                         transition: all .4s ease-in-out;
                         // width: 90%;
                     }
@@ -453,7 +453,7 @@ nav a:hover {   /* When mouse hovered */
         .hover-items{
             width: 100%;
             height: 300px;          // .hover-items height should be the same as img height
-            background-color: red;
+            background-color: var(--color-aux3);
             position: absolute;
             left: 0;
             top: 0;
@@ -476,7 +476,7 @@ nav a:hover {   /* When mouse hovered */
                 justify-content: center;
                 align-items: center;
                 .icon{
-                    background-color: white;
+                    background-color: var(--color-primary);
                     border-radius: 50%;
                     width: 50px;
                     height: 50px;
@@ -486,15 +486,16 @@ nav a:hover {   /* When mouse hovered */
                     margin: 0 1rem;
                     cursor: pointer;
                     transition: all .4s ease-in-out;
+                    text-decoration: none;
                     i{
                         font-size: 1.5rem;
-                        color: green;
+                        color: var(--color-aux1);
                         margin: 0 1rem;
                     }
                     &:hover{
-                        background-color: blue;
+                        background-color: var(--color-aux1);
                         i{
-                            color: black;
+                            color: var(--color-primary);
                         }
                     }             
                 }
@@ -504,9 +505,63 @@ nav a:hover {   /* When mouse hovered */
 }
 
 .project-item:hover .hover-items{
-    opacity: .75;
+    opacity: .9;
     // transform: scale(1);
 }
+
+.split-content-project{
+    min-height: 100vh;
+    // height: 100%;
+    // background-image: url("../img/bgrnd.jpg");
+    // background-color: var(--color2);
+    background-blend-mode: multiply;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 3vw;
+    place-items: center;
+    // padding-top: 38px;
+    .left-content{
+        display: flex;
+        align-items: center;
+        position: relative;
+        .image{
+            // border-radius: 14px;
+            height: 100%;
+            width: 100%;
+            // margin-left: 15rem;
+            // background-color: blue;
+            img { 
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                // transition: all .4s ease-in-out;
+                // filter: grayscale(100%);
+                // &:hover{
+                //     filter: grayscale(0);
+                // }
+            }
+        }
+    }
+    .right-content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-right: 5vw;
+        .name{
+            font-size: 3rem;
+            margin: 1rem 0;
+            span{
+                color: var(--color-tertiary);
+            }
+        }
+        p {
+            margin: 0.5rem 0;
+            line-height: 2rem;
+        }
+    }
+}
+
 
 // Contact section
 .contact-content-con{
