@@ -145,13 +145,13 @@ nav a:hover {   /* When mouse hovered */
 }
 
 .logo{
-    color: white;
-    font-size: 1.5rem;
-    padding-top: .3rem;
-    padding-bottom: .3rem;
-    // img{
-    //     width: 35px;
-    // }
+    .logo-icon{
+    color: var(--color-aux1);
+    font-size: 2rem;
+    // padding-top: .3rem;
+    // padding-bottom: .3rem;
+    }
+    
 }
 
 /* navigation styles end here -------------------------------------- */
@@ -468,7 +468,7 @@ nav a:hover {   /* When mouse hovered */
             h3{
                 font-size: 1.5rem;
                 color: black;
-                margin-bottom: 1.5rem;
+                margin-bottom: 1.5rem !important;
                 text-align: center;
             }
             .icons{
